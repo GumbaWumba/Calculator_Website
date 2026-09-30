@@ -18,6 +18,7 @@ button {
     width: 150px; 
     height: 150px; 
     box-sizing: border-box;
+    animation: buttonAnimation 1s infinite;
     font-family: sans-serif;
 
     text-align: center; 
@@ -31,6 +32,6 @@ button {
 
 @keyframes buttonAnimation {
     0% { transform: scale(1); }
-    50% { transform: scale(1.2); }
+    50% { transform: scale(1.05); }
     100% { transform: scale(1); }
 }
