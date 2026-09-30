@@ -9,7 +9,7 @@ numberButton.forEach(button => {
     button.addEventListener("click", () => {
         const value = button.textContent.trim();
 
-        if (anzeige.textContent === "0") {
+        if (input.textContent === "0") {
             input.textContent = value;
         } else {
             input.textContent += value;
