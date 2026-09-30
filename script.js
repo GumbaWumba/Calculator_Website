@@ -2,8 +2,10 @@
 const numberButton = document.querySelectorAll(".number");
 const operatorButton = document.querySelectorAll(".operator");
 const equalButton = document.querySelector(".equal");
+const deleteButton = document.querySelector(".del");
 
 let input = document.querySelector("h1");
+
 
 numberButton.forEach(button => {
     button.addEventListener("click", () => {
@@ -20,9 +22,22 @@ numberButton.forEach(button => {
 operatorButton.forEach(button => {
     button.addEventListener("click", () => {
         const value = button.textContent.trim();
+        console.log(input.textContent.at(-1));
+
+        if("+-*/".includes(input.textContent.at(-1))){
+        input.textContent = input.textContent.slice(0, input.textContent.length - 1);
+        }
 
         input.textContent += value;
     });
+});
+
+deleteButton.addEventListener("click", () => {
+    input.textContent = input.textContent.slice(0, -1);
+
+    if (input.textContent === "") {
+        input.textContent = "0";
+    }
 });
 
 equalButton.addEventListener("click", () => {
