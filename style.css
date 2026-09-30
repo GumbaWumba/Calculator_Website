@@ -1,6 +1,9 @@
 
 body {
-background-color: rgb(6, 53, 63);
+background-color: rgba(126, 127, 127, 0.2);
+background-image: url('https://www.finstar.ch/media/qizjlany/finstar_logo.svg');
+background-repeat: no-repeat;
+background-size: auto;
 }
 
 header {
@@ -36,39 +39,7 @@ h1 {
     margin-top: 20px;
 }
 
-#img1 {
-    width: 400px;
-    border-radius: 20px;
-    height: 150px;
-    position:fixed;
-    top: 30px;
-}
 
-#img2 {
-    width: 400px;
-    border-radius: 20px;
-    height: 150px;
-    position:fixed;
-    top: 640px;
-}
-
-#img3 {
-    width: 400px;
-    border-radius: 20px;
-    height: 150px;
-    position:fixed;
-    top: 20px;
-    left: 1120px;
-}
-
-#img4 {
-    width: 400px;
-    border-radius: 20px;
-    height: 150px;
-    position:fixed;
-    top: 640px;
-    left: 1120px;
-}
 
 button {
     background-color: rgb(15, 199, 255);
