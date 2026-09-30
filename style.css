@@ -1,37 +1,50 @@
 
 body {
-background-color: gray;
+background-color: rgb(6, 53, 63);
+}
+
+header {
+    font-family: sans-serif;
+    text-align: center;
 }
 
 h1 {
     color: white;
     text-align: center;
-    font-size: 30px;
+    font-size: 50px;
+    width: 300px;
     font-family: sans-serif;
+    background-color: rgb(15, 199, 255);
 }
 
-button {    
-    background-color: rgb(15, 199, 255); 
-    border-radius: 100px; 
-    border: 7px solid rgb(3, 89, 128); 
-    color: white; 
-    width: 150px; 
-    height: 150px; 
+button {
+    background-color: rgb(15, 199, 255);
+    border-radius: 100px;
+    border: 7px solid rgb(3, 89, 128);
+    color: white;
+    width: 150px;
+    height: 150px;
     box-sizing: border-box;
-    animation: buttonAnimation 1s infinite;
     font-family: sans-serif;
 
-    text-align: center; 
-    margin-top: 20px;  
+    text-align: center;
+    margin-top: 20px;
     margin-bottom: 20px;
     margin-right: 100px;
     margin-left: 120px;
     font-weight: 900;
-    font-size: 60px; 
+    font-size: 60px;
+
+    transition: 0.2s;
 }
 
-@keyframes buttonAnimation {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+button:hover {
+    background-color: rgb(13, 80, 111);
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+button:active {
+    background-color: rgb(13, 80, 111);
+    transform: scale(0.95);
 }
