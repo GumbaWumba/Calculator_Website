@@ -1,8 +1,11 @@
- 
+
 body {
-background-color: rgb(6, 53, 63);
+background-color: rgba(126, 127, 127, 0.2);
+background-image: url('https://www.finstar.ch/media/qizjlany/finstar_logo.svg');
+background-repeat: no-repeat;
+background-size: auto;
 }
- 
+
 header {
     font-family: sans-serif;
     color: white;
@@ -10,7 +13,7 @@ header {
     text-align: center;
     margin-bottom: 10px;
 }
- 
+
 h1 {
     color: white;
     text-align: center;
@@ -27,7 +30,7 @@ h1 {
     background-color: rgb(15, 199, 255);
     text-shadow: 0px 4px 0px rgb(0, 0, 0);
 }
- 
+
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 150px);
@@ -35,41 +38,9 @@ h1 {
     justify-content: center;
     margin-top: 20px;
 }
- 
-#img1 {
-    width: 400px;
-    border-radius: 20px;
-    height: 150px;
-    position:fixed;
-    top: 30px;
-}
- 
-#img2 {
-    width: 400px;
-    border-radius: 20px;
-    height: 150px;
-    position:fixed;
-    top: 640px;
-}
- 
-#img3 {
-    width: 400px;
-    border-radius: 20px;
-    height: 150px;
-    position:fixed;
-    top: 20px;
-    left: 1120px;
-}
- 
-#img4 {
-    width: 400px;
-    border-radius: 20px;
-    height: 150px;
-    position:fixed;
-    top: 640px;
-    left: 1120px;
-}
- 
+
+
+
 button {
     background-color: rgb(15, 199, 255);
     border-radius: 20px;
@@ -85,13 +56,13 @@ button {
     transition: 0.2s;
     text-shadow: 0px 2px 0px #000000;
 }
- 
+
 button:hover {
     background-color: rgb(13, 80, 111);
     cursor: pointer;
     transform: scale(1.05);
 }
- 
+
 button:active {
     background-color: rgb(13, 80, 111);
     transform: scale(0.95);

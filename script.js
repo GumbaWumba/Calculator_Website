@@ -9,6 +9,10 @@ let input = document.querySelector("h1");
 
 numberButton.forEach(button => {
     button.addEventListener("click", () => {
+        if (input.textContent == "Error"){
+            input.textContent = "";
+        }
+
         const value = button.textContent.trim();
 
         if (input.textContent === "0") {
@@ -21,11 +25,17 @@ numberButton.forEach(button => {
 
 operatorButton.forEach(button => {
     button.addEventListener("click", () => {
+        if (input.textContent == "Error"){
+            input.textContent = "0";
+        }
+        
         const value = button.textContent.trim();
         console.log(input.textContent.at(-1));
 
-        if("+-*/".includes(input.textContent.at(-1))){
+        if("+*/".includes(input.textContent.at(-1))){
         input.textContent = input.textContent.slice(0, input.textContent.length - 1);
+        }if("+-*/".includes(input.textContent)){
+
         }
 
         input.textContent += value;
@@ -33,6 +43,10 @@ operatorButton.forEach(button => {
 });
 
 deleteButton.addEventListener("click", () => {
+    if (input.textContent == "Error"){
+        input.textContent = "";
+    }
+
     input.textContent = input.textContent.slice(0, -1);
 
     if (input.textContent === "") {
