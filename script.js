@@ -26,7 +26,7 @@ operatorButton.forEach(button => {
 });
 
 equalButton.addEventListener("click", () => {
-    const parts = input.textContent.match(/\d+|[+\-*/]/g);
+    const parts = input.textContent.match(/\d+\.?\d*|[+\-*/]/g);
 
     for (let i = 1; i < parts.length; i += 2) {
         const operator = parts[i];
