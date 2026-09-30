@@ -26,31 +26,30 @@ operatorButton.forEach(button => {
 });
 
 equalButton.addEventListener("click", () => {
-    const teile = input.textContent.match(/^(\d+)([+\-*/])(\d+)$/);
+    const parts = input.textContent.match(/\d+\.?\d*|[+\-*/]/g);
 
-    if (teile === null) {
-        return;   // keine gültige Rechnung, nichts tun
+    for (let i = 1; i < parts.length; i += 2) {
+        const operator = parts[i];
+
+        if (operator === "*" || operator === "/") {
+            const left = Number(parts[i - 1]);
+            const right = Number(parts[i + 1]);
+            const halfResult = operator === "*" ? left * right : left / right;
+
+            parts.splice(i - 1, 3, halfResult);
+            i -= 2; 
+        }
     }
 
-    const zahl1 = Number(teile[1]);
-    const operator = teile[2];
-    const zahl2 = Number(teile[3]);
-    let ergebnis;
+    let result = Number(parts[0]);
 
-    switch (operator) {
-        case "+":
-            ergebnis = zahl1 + zahl2;
-            break;
-        case "-":
-            ergebnis = zahl1 - zahl2;
-            break;
-        case "*":
-            ergebnis = zahl1 * zahl2;
-            break;
-        case "/":
-            ergebnis = zahl2 === 0 ? "Fehler" : zahl1 / zahl2;
-            break;
+    for (let i = 1; i < parts.length; i += 2) {
+        const operator = parts[i];
+        const number = Number(parts[i + 1]);
+
+        if (operator === "+") result += number;
+        if (operator === "-") result -= number;
     }
 
-    input.textContent = ergebnis;
+    input.textContent = Number.isFinite(result) ? result : "Error";
 });
